@@ -94,4 +94,8 @@ UDIS-Project/
 ├── .gitignore
 └── README.md
 
+## 👤 Author
 
+**Sai Kalyan Matta**
+
+AIML Student | Computer Vision & Image Processing Enthusiast
