@@ -8,7 +8,9 @@ def generate_cam(model, img_tensor, img_path):
     target_layer = model.model.features[-1]
     cam = GradCAM(model=model, target_layers=[target_layer])
 
-    targets = [ClassifierOutputTarget(1)]
+    pred_class = model(img_tensor).argmax(1).item()
+    targets = [ClassifierOutputTarget(pred_class)]
+
     grayscale_cam = cam(input_tensor=img_tensor, targets=targets)[0]
 
     img = cv2.imread(img_path)
