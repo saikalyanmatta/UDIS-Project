@@ -31,7 +31,7 @@ def predict(img_path):
         pred = probs.argmax(1).item()
         confidence = probs.max().item()
 
-    class_names = ["Damaged", "Intact"]
+    class_names = ["damaged", "intact"]
     return f"{class_names[pred]} ({confidence*100:.2f}%)"
 
 print(predict("data/val/damaged/packagingboxesthataredamaged175.jpeg"))
